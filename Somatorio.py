@@ -23,7 +23,7 @@ while flag:
     else:
         flag = True
 w = soma(lista)
-
+print(type(w))
 
 
 
