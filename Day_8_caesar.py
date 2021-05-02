@@ -4,8 +4,6 @@ alphabet = [' ','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 
 
 def caesar (initial, shift_amount, direction):
-    flag = True
-    while flag:
         end_text=""
         if direction == 'decore':
             shift_amount *= -1
@@ -16,17 +14,20 @@ def caesar (initial, shift_amount, direction):
             end_text += alphabet[new_posi]
         print(f'Aqui foi escolhido a direção {direction} e o resultado foi {end_text}')
 
-        question = input('Quer continuar?')
-        if question == 's':
-            flag = True
-        else:
-            flag = False
 
 
 
 
-direction = input('qual a direção você quer? ')
-text = input('Digite o seu texto? ')
-shift = int(input('Quantos passos?'))
-s = caesar(initial=text, shift_amount=shift,direction=direction)
-s
+flag = True
+while flag:
+    direction = input('qual a direção você quer? ')
+    text = input('Digite o seu texto? ')
+    shift = int(input('Quantos passos?'))
+    s = caesar(initial=text, shift_amount=shift,direction=direction)
+    s
+
+    question = input('Quer continuar?')
+    if question == 's':
+        flag = True
+    else:
+        flag = False
