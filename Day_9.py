@@ -22,4 +22,5 @@ while flag:
     if not question == 's':
         flag = False
         maior_number(dic_bids=motion_dic)
+        print('Finished')
 
