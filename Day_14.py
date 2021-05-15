@@ -11,7 +11,7 @@ def format_data(acount):
     account_descr = acount['description']
     account_follower = acount['follower_count']
     account_country = acount['name']
-    return f'{account_name}, {account_descr}, {account_country} e {account_follower}'
+    return f'{account_name}, {account_descr}, {account_country}'
 
 def check_answer (follower_1, follower_2, option):
     if follower_1 > follower_2:
@@ -19,9 +19,9 @@ def check_answer (follower_1, follower_2, option):
     else:
         return option == "b"
 
-acount_b = random.choice(data)
-flag = True
+acount_b = random.choice(data)  # Big tips this part the code , pay attention for that's strategy.
 
+flag = True
 while flag:
     acount_a = acount_b
     acount_b = random.choice(data)
