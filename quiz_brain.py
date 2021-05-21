@@ -12,8 +12,9 @@ class Quizbrain:
         flag = True
         while flag:
             self.user_answer = input(f'Q.{self.question_number}: {current_question.text} (true or false)?')
-            if not self.user_answer == 'true' or self.user_answer == 'false':
+            if self.user_answer != 'true' and self.user_answer != 'false':
                 print("We haven't this options, Please give us another opinion")
+
             else:
                 flag = False
 
@@ -26,6 +27,7 @@ class Quizbrain:
         if self.question_number < len(self.question_list):
             return True
         else:
+            self.analize(score_final=self.score)
             return False
 
     def check_answer(self, user_answer, current_question):
@@ -35,3 +37,11 @@ class Quizbrain:
         else:
             print('Unfortunately you made mistake.')
         print(f'correct answer is {current_question}')
+
+    def analize(self, score_final):
+        if score_final < 5:
+            print('You are low level in this topic, You should improve your knowledge.')
+        elif score_final >= 5 and score_final < 8:
+            print('You are median level in this topic, Try read more for improve more and more.')
+        else:
+            print('You are high, Keep going this way.')
